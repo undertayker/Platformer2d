@@ -1,7 +1,6 @@
 using UnityEngine;
 
 [RequireComponent(typeof(SpriteRenderer))]
-
 public class Enemy : MonoBehaviour
 {
     [SerializeField] private SpriteRenderer _renderer;
@@ -21,6 +20,11 @@ public class Enemy : MonoBehaviour
     }
 
     private void Update()
+    {
+        Flip();
+    }
+
+    private void Flip()
     {
         if (transform.position.x > _target.position.x)
         {
